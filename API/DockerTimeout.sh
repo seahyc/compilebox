@@ -4,6 +4,8 @@ set -e
 to=$1
 shift
 
+
+echo 'hello world!'
 cont=$(docker run -d "$@")
 code=$(timeout "$to" docker wait "$cont" || true)
 docker kill $cont &> /dev/null
